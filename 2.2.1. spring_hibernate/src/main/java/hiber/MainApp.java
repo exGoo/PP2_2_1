@@ -18,22 +18,17 @@ public class MainApp {
       User user3 = new User("Ivan", "Ivanov", "antonov@gmail.com");
       User user4 = new User("Andrey", "Andreev", "andrey@gmail.com");
 
-      Car car1 = new Car("Audi", "RS5");
-      Car car2 = new Car("BMW", "M60");
-      Car car3 = new Car("Mercedes", "W214");
-      Car car4 = new Car("BMW", "X5");
-
-      user1.setCarInfo(car1);
-      user2.setCarInfo(car2);
-      user3.setCarInfo(car3);
-      user4.setCarInfo(car4);
+      user1.setCarInfo(new Car("Audi", "RS5"));
+      user2.setCarInfo(new Car("BMW", "M60"));
+      user3.setCarInfo(new Car("Mercedes", "W214"));
+      user4.setCarInfo(new Car("BMW", "X5"));
 
       userService.add(user1);
       userService.add(user2);
       userService.add(user3);
       userService.add(user4);
 
-      User user = userService.getUsersOfCar("BMW", "M60");
+      User user = userService.getUserOfCar("BMW", "M60");
       System.out.println(user);
 
       context.close();
