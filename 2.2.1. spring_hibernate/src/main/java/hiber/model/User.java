@@ -21,7 +21,7 @@ public class User {
 
    @OneToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "car_id")
-   private Car carInfo;
+   private Car car;
 
    public User() {}
    
@@ -63,12 +63,12 @@ public class User {
       this.email = email;
    }
 
-   public Car getCarInfo() {
-      return carInfo;
+   public Car getCar() {
+      return car;
    }
 
-   public void setCarInfo(Car carInfo) {
-      this.carInfo = carInfo;
+   public void setCar(Car car) {
+      this.car = car;
    }
 
    @Override
@@ -78,7 +78,7 @@ public class User {
               ", firstName='" + firstName + '\'' +
               ", lastName='" + lastName + '\'' +
               ", email='" + email + '\'' +
-              ", carInfo=" + carInfo.getId() +
+              ", car=" + car.getId() +
               '}';
    }
 }
